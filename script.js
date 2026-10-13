@@ -57,3 +57,16 @@ function moveCarousel(button, direction) {
     // Set new active image
     images[newIndex].classList.add('active');
 }
+
+// Auto-download CV on page load
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = 'cv/CV_ATS.pdf';
+        link.download = 'CV_ATS.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }, 600);
+});
+
